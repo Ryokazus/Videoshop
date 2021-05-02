@@ -73,6 +73,8 @@ class CatalogDataInitializer implements DataInitializer {
 				.save(new Disc("Hot Shots! Part Deux", "hspd", Money.of(9999.0, EURO), "Action/Comedy/War", DiscType.DVD));
 		videoCatalog.save(new Disc("Avatar: The Last Airbender", "tla", Money.of(19.99, EURO), "Animation/Action/Adventure",
 				DiscType.DVD));
+		videoCatalog.save(new Disc("Casa negra  ","Abidox", Money.of(12.00,EURO),"Comedy/Drama/Horror",DiscType.DVD));
+
 
 		videoCatalog.save(new Disc("Secretary", "secretary", Money.of(6.99, EURO), "Political Drama", DiscType.BLURAY));
 		videoCatalog.save(new Disc("The Godfather", "tg", Money.of(19.99, EURO), "Crime/Drama", DiscType.BLURAY));
