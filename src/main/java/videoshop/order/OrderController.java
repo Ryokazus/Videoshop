@@ -141,6 +141,13 @@ class OrderController {
 		}).orElse("redirect:/cart");
 	}
 
+	//Hinzufügen für Leeren-Button (Post-Anfrage zum clearen von Cart)
+	@PostMapping("/cart/clear")
+	String clearCart(@ModelAttribute Cart cart) {
+		cart.clear();
+		return "redirect:/cart";
+	}
+	
 	@GetMapping("/orders")
 	@PreAuthorize("hasRole('BOSS')")
 	String orders(Model model) {
