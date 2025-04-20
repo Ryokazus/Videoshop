@@ -8,6 +8,11 @@
     <body>
         <section layout:fragment="content">
             <div th:unless="${cart.empty}">
+                  <div class="ui right aligned basic segment">
+                        <form sec:authorize="hasRole('Customer')" class="ui form" method="post" th:action="@{/cart/clear}">  
+                              <button type="submit" class="ui button" th:text="#{cart.clear}">Leeren</button>
+                        </form>
+                  </div>
                 <table class="ui celled table">
                     <thead>
                     <tr>
