@@ -48,12 +48,13 @@ import org.springframework.validation.Errors;
  */
 class RegistrationForm {
 
-	private final @NotEmpty String name, password, address;
+	private final @NotEmpty String name, email, password, address;
 
-	public RegistrationForm(String name, String password, String address) {
+	public RegistrationForm(String name, String password, String email, String address) {
 
 		this.name = name;
 		this.password = password;
+		this.email = email;
 		this.address = address;
 	}
 
@@ -63,6 +64,10 @@ class RegistrationForm {
 
 	public String getPassword() {
 		return password;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 
 	public String getAddress() {

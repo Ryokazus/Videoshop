@@ -38,6 +38,7 @@ public class Customer extends AbstractAggregateRoot<CustomerIdentifier> {
 
 	private @EmbeddedId CustomerIdentifier id = new CustomerIdentifier();
 
+	private String email;
 	private String address;
 
 	// (｡◕‿◕｡)
@@ -49,8 +50,9 @@ public class Customer extends AbstractAggregateRoot<CustomerIdentifier> {
 	@SuppressWarnings("unused")
 	private Customer() {}
 
-	public Customer(UserAccount userAccount, String address) {
+	public Customer(UserAccount userAccount, String email, String address) {
 		this.userAccount = userAccount;
+		this.email = email;
 		this.address = address;
 	}
 
@@ -62,6 +64,7 @@ public class Customer extends AbstractAggregateRoot<CustomerIdentifier> {
 	public CustomerIdentifier getId() {
 		return id;
 	}
+
 
 	public String getAddress() {
 		return address;
@@ -75,7 +78,15 @@ public class Customer extends AbstractAggregateRoot<CustomerIdentifier> {
 		return userAccount;
 	}
 
-	@Embeddable
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Embeddable
 	public static final class CustomerIdentifier implements Identifier, Serializable {
 
 		private static final long serialVersionUID = 7740660930809051850L;
